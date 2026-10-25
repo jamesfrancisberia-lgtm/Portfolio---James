@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Francis Beria | Omnitrix Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="omnitrix-active">
+
+    <!-- Omnitrix Boot Screen -->
+    <div class="omnitrix-loader" id="loader">
+        <div class="loader-dial">
+            <div class="loader-core"></div>
+        </div>
+        <p class="loader-text">// INITIALIZING OMNITRIX OS v10.0...</p>
+    </div>
+
+    <!-- Particle Background Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="omnitrix-symbol"></span> JB
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-btn active" data-target="home">Home</a></li>
+            <li><a href="#" class="nav-btn" data-target="about">About</a></li>
+            <li><a href="#" class="nav-btn" data-target="skills">Skills</a></li>
+            <li><a href="#" class="nav-btn" data-target="education">Education</a></li>
+            <li><a href="#" class="nav-btn" data-target="contacts">Contacts</a></li>
+        </ul>
+        <div class="nav-tools">
+            <button class="icon-btn" id="openTerminalBtn" title="Plumber Terminal"><i class="fa-solid fa-terminal"></i></button>
+            <div class="omnitrix-dial" id="themeToggle" title="Toggle Omnitrix Mode">
+                <div class="dial-core"><div class="hourglass"></div></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Home Section -->
+        <section class="page-section active" id="home">
+            <div class="hero">
+                <div class="hero-avatar">
+                    <div class="hologram-container">
+                        <div class="hologram-ring"></div>
+                        <img src="james.jpg" alt="James Francis Beria" class="profile-photo" />
+                    </div>
+                </div>
+
+                <div class="hero-content">
+                    <p class="greeting" id="greetingText">// OMNITRIX USER IDENTIFIED</p>
+                    <h1 class="name">James Francis Beria</h1>
+                    <h2 class="title">Web Developer <span class="alien-badge" id="alienBadge">Galvan Level 10</span></h2>
+                    <p class="description">
+                        Building responsive digital software, backend systems, and web applications through precision code and high-tech UI design.
+                    </p>
+
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" id="transformBtn"><i class="fa-solid fa-rotate"></i> Transform!</button>
+                        <button class="btn btn-secondary" id="typingGameBtn"><i class="fa-solid fa-keyboard"></i> WPM Challenge</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="page-section" id="about">
+            <div class="section-container">
+                <h2 class="section-title"><i class="fa-solid fa-brain"></i> About <span>James</span></h2>
+                <div class="info-box">
+                    <p>I am a 3rd-year college student pursuing a Bachelor of Science in Information Technology (BSIT). Driven by software architecture, database management, and interactive web programming, I continuously build robust applications using full-stack capabilities.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="page-section" id="skills">
+            <div class="section-container">
+                <h2 class="section-title"><i class="fa-solid fa-code"></i> Technical <span>Arsenal</span></h2>
+                <div class="skills-grid">
+                    <div class="skill-card"><h3>HTML5 & CSS3</h3><p>Semantic layout, responsive design, and CSS keyframe animations.</p></div>
+                    <div class="skill-card"><h3>JavaScript</h3><p>Async programming, DOM interaction, and web synthesis engines.</p></div>
+                    <div class="skill-card"><h3>C#</h3><p>Object-Oriented Programming (OOP) and software logic.</p></div>
+                    <div class="skill-card"><h3>Java</h3><p>Cross-platform structure, classes, and backend program flows.</p></div>
+                    <div class="skill-card"><h3>SQL Database</h3><p>Data modeling, relational schema manipulation, and SQL queries.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="page-section" id="education">
+            <div class="section-container">
+                <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Academic <span>Journey</span></h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Bachelor of Science in Information Technology</h3>
+                            <p>3rd Year College Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacts Section -->
+        <section class="page-section" id="contacts">
+            <div class="section-container">
+                <h2 class="section-title"><i class="fa-solid fa-satellite-dish"></i> Direct <span>Channels</span></h2>
+                <div class="contact-cards">
+                    <a href="https://www.facebook.com/james.beria.20" target="_blank" class="contact-box">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <h4>Facebook</h4>
+                    </a>
+                    <a href="https://www.instagram.com/jimjimzz/" target="_blank" class="contact-box">
+                        <i class="fa-brands fa-instagram"></i>
+                        <h4>Instagram</h4>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Typing Game Modal -->
+    <div class="modal hidden" id="typingModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeTypingModal">&times;</span>
+            <h2><i class="fa-solid fa-keyboard"></i> Plumber Speed Typing Test</h2>
+            <p>Type the quote below as fast and accurately as possible!</p>
+            <div class="typing-quote" id="quoteDisplay">omnitrix core online ready for action galvan level intelligence system ready for transformation sequence</div>
+            <textarea id="quoteInput" placeholder="Start typing here..."></textarea>
+            <div class="typing-stats">
+                <span>Time: <strong id="timerText">15</strong>s</span>
+                <span>WPM: <strong id="wpmText">0</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terminal Overlay -->
+    <div class="terminal-overlay hidden" id="terminalOverlay">
+        <div class="terminal-header">
+            <span>PLUMBER COMMAND CENTER v10.4</span>
+            <span class="close-modal" id="closeTerminal">&times;</span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+            <div>Type 'help' to view available sub-space commands.</div>
+        </div>
+        <div class="terminal-input-line">
+            <span>&gt;</span>
+            <input type="text" id="terminalInput" autofocus>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script> 
+    
+    <!-- Chatbase Integration Script -->
+    <script>
+        (function(){
+            if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+                window.chatbase = function(...args) {
+                    if(!window.chatbase.q) { window.chatbase.q = []; }
+                    window.chatbase.q.push(args);
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if(prop === "q") return target.q;
+                        return (...args) => target(prop, ...args);
+                    }
+                });
+            }
+            const onLoad = function(){
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "DJI29HM0Ug4PqFHs4pWcO";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+            if(document.readyState === "complete"){
+                onLoad();
+            } else {
+                window.addEventListener("load", onLoad);
+            }
+        })();
+    </script>
+</body>
+</html> 
